@@ -1,0 +1,2 @@
+echo SBT_OPTS=-XX:MaxPermSize=256M > ~/.sbtconfig
+sbt \;update\;compile
