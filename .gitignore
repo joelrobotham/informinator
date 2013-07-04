@@ -3,3 +3,9 @@ project/target
 logs
 *.swp
 *.idea*
+.classpath
+.project
+.cache
+.target
+/bin
+.settings
