@@ -24,6 +24,7 @@ object Notifications extends Controller {
 
   def index(email: String) = Action {
     val notifications = NotificationDAO.findByEmail(email)
+
     Ok(html.notifications.index(email,notifications))
   }
 }

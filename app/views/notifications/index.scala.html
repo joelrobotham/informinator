@@ -9,12 +9,15 @@
             </tr>
         </thead>
         <tbody>
-            @for(notification <- notifications) {
+          @for(notification <- notifications) {
+             
             <tr>
-                <td>10/10/2011 10:15am</td>
+                <td>mapping@notification.creation</td>
                 <td>@notification.message</td>
+                
             </tr>
             }
         </tbody>
     </table>
-}
+    
+    }
