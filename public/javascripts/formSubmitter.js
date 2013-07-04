@@ -1,7 +1,8 @@
 $('#form').submit(function(event) {
     event.preventDefault();
-    var formSubmitData = {},
-        formData = $(this).serializeArray();
+    var form = this,
+        formSubmitData = {},
+        formData = $(form).serializeArray();
     for(var i in formData) {
         formSubmitData[formData[i].name] = formData[i].value;
     }
@@ -9,5 +10,12 @@ $('#form').submit(function(event) {
     $.ajax({url: '/notifications/testAlert',
             type: "PUT",
             contentType: "application/json",
-            data: JSON.stringify(formSubmitData)});
+            data: JSON.stringify(formSubmitData)})
+        .done(function() {
+            form.reset();
+            alert("Notification submitted");
+        })
+        .fail(function() {
+            form.reset();
+        });
 });
