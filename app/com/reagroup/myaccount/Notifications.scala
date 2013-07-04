@@ -1,6 +1,7 @@
 package com.reagroup.myaccount
 
 import play.api.mvc.{Action, Controller}
+import play.api.libs.json.JsError
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,7 +11,7 @@ import play.api.mvc.{Action, Controller}
  * To change this template use File | Settings | File Templates.
  */
 object Notifications extends Controller {
-  def create(messageType: String) = Action {
-    Ok("It works " + messageType)
+  def create(messageType: String) = Action(parse.json) { request =>
+    Ok(request.body \ "message")
   }
 }
