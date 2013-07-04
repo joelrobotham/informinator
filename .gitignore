@@ -1,6 +1,7 @@
 target
 project/target
 logs
+sbt
 *.swp
 *.idea*
 .classpath
