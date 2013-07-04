@@ -1,0 +1,224 @@
+@()(content: Html)
+<!DOCTYPE html>
+<!--[if IE 7]>         <html class="no-js ie ie7 lt-ie8 lt-ie9 lt-ie10"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie ie8 lt-ie9 lt-ie10"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie ie9 lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+
+        <meta charset="utf-8"/>
+
+            <!-- Use the .htaccess and remove these lines to avoid edge case issues. More info: h5bp.com/i/378 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>realestate.com.au</title>
+        <meta name="description" content="" />
+
+            <!-- Mobile viewport optimized: h5bp.com/viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+            <!-- Must have modernizr -->
+        <link rel="stylesheet" type="text/css" href="http://s1.rui.au.reastatic.net/rui-0.2.3-162/css/rui-all.min.css"/>
+
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.0.3.min.js")"></script>
+
+        <script type="text/javascript" src="http://s1.rui.au.reastatic.net/rui-0.2.3-162/rui-all.min.js"></script>
+
+    </head>
+        <!-- Should include a class on the body tag for the page type ie: homepage -->
+    <body class="homepage rui-responsive">
+        <ul class="rui-visuallyhidden rui-accessibility">
+            <li>
+                <a href="#rui-main-nav" title="Go directly to the website navigation" accesskey="1" tabindex="1">skip to Main Navigation</a>
+            </li>
+            <li>
+                <a href="#rui-main-content" title="Go directly to main content" accesskey="2" tabindex="2">skip to Content</a>
+            </li>
+        </ul>
+        <header class="rui-header rui-clearfix">
+            <div class="rui-grid">
+                <a title="realestate.com.au homepage" href="/buy" class="rui-main-logo">
+                    <img src="http://s1.rui.au.reastatic.net/rui-static/img/rea-logo-v1.png" alt="realestate.com.au Australia's No.1 Property Site" />
+                </a>
+                <ul id="rui-site-links">
+                    <li><a href="http://mobile.realestate.com.au" title="realestate.com.au on your mobile" class="rui-site-link">mobile real estate</a></li>
+                    <li><a href="http://www.realcommercial.com.au" title="Commercial property and businesses for sale" class="rui-site-link">realcommercial.com.au</a></li>
+                    <li class="rui-international-sites">
+                        <div class="rui-toggle-wrapper">
+                            <a href="#" title="International real estate websites" class="rui-site-link rui-toggle-link">international sites</a>
+                            <ul class="rui-international-nav rui-toggle-container">
+                                <li class="france">
+                                    <a title="Agences immobilieres France" href="http://www.immoregion.fr/">France</a>
+                                </li>
+                                <li class="germany">
+                                    <a title="Immobilien Deutschland" href="http://www.athome.de/">Germany</a>
+                                </li>
+                                <li class="hongkong">
+                                    <a title="Property for sale and rent in Hong Kong" href="http://www.squarefoot.com.hk/">Hong Kong</a>
+                                </li>
+                                <li class="italy">
+                                    <a title="Immobiliari Italia" href="http://www.casa.it/">Italy</a>
+                                </li>
+                                <li class="luxembourg">
+                                    <a title="Agences immobiliere Luxembourg" href="http://www.athome.lu/">Luxembourg</a>
+                                </li>
+                                <li class="nz">
+                                    <a title="Property for sale and rent in New Zealand" href="http://www.realestate.co.nz/?arcn&amp;rsf=globalnav">New Zealand</a>
+                                </li>
+                                <li class="singapore last">
+                                    <a title="Property Guru Singapore" href="http://www.propertyguru.com.sg/">Singapore</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="rui-clearboth"></div>
+                <nav id="rui-main-nav">
+                    <ul>
+                        <li class="rui-nav-tab rui-brand-tab buy" id="rui-nav-active">
+                            <a href="/buy" title="Real estate and property for sale">
+                                <span>Buy</span>
+                            </a>
+                        </li>
+                        <li class="rui-nav-tab rent">
+                            <a href="/rent" title="Rental properties">
+                                <span>Rent</span>
+                            </a>
+                        </li>
+                        <li class="rui-nav-tab rui-brand-tab new-homes">
+                            <a href="/new-homes/new-house+land" title="New home designs and house and land packages">
+                                <span>New Homes</span>
+                            </a>
+                        </li>
+                        <li class="rui-nav-tab rui-brand-tab share">
+                            <a href="/share" title="Share accommodation">
+                                <span>Share</span>
+                            </a>
+                        </li>
+                        <li class="rui-nav-tab agent">
+                            <a href="/find-agent" title="Find a real estate agent">
+                                <span>Find an agent</span>
+                            </a>
+                        </li>
+                        <li class="rui-nav-tab sold">
+                            <a href="/sold" title="Sold properties">
+                                <span>Sold Prices</span>
+                            </a>
+                        </li>
+                        <li class="rui-nav-tab rui-brand-tab home-ideas">
+                            <a href="/home-ideas" title="Home Ideas">
+                                <span>Home Ideas</span>
+                            </a>
+                        </li>
+                        <li class="experts">
+                            <div class="rui-toggle-wrapper">
+                                <a href="#" title="realestate information, videos and community" class="experts-link rui-toggle-link">
+                                    <span>Experts</span>
+                                </a>
+                                <ul id="infoMenu" class="experts-menu rui-toggle-container">
+                                    <li>
+                                        <a href="http://experts.realestate.com.au/buying" title="Buying Property">Buying</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://experts.realestate.com.au/selling" title="Selling Property">Selling</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://experts.realestate.com.au/renting-sharing" title="Renting and Sharing">Renting &amp; Sharing</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://experts.realestate.com.au/renovating-building" title="Renovating and Building">Renovating &amp; Building</a>
+                                    </li>
+                                    <li><a href="http://experts.realestate.com.au/moving" title="Moving House">Moving</a></li>
+                                    <li>
+                                        <a href="http://experts.realestate.com.au/calculators" title="Calculators">Calculators</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.realestate.com.au/cgi-bin/rsearch?a=bhp&amp;t=as-bag" title="Buyers Agents">Buyers Agents</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.realestate.com.au/cgi-bin/rsearch?a=sp" title="Suburb Profile Information">Suburb Profiles</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.homeguru.com.au/?utm_source=rea3&amp;utm_medium=homelink&amp;utm_term=home&amp;utm_content=dollar&amp;utm_campaign=up" target="_blank" title="Home Guru">Home Guru</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://homeloans.realestate.com.au" title="Home Loans">Home Loans</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.realestate.com.au/cgi-bin/rsearch?a=ars" title="Auction Results">Auction Results</a>
+                                    </li>
+                                    <li class="last">
+                                        <a href="http://insurance.realestate.com.au" title="Insurance">Insurance</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                            <!-- End .experts -->
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="rui-body-content" id="rui-main-content">
+            <div class="rui-grid">
+                <section class="rui-grid-primary">
+                    @content
+                </section>
+                <section class="rui-grid-secondary">
+
+                </section>
+                <div class="rui-clearboth"></div>
+                <section class="site-directory rui-clearfix">
+                    <p class="contextual">
+            Lorem ipsum type stuff goes here
+                    </p>
+                </section>
+                    <!-- End .site-directory -->
+            </div>
+        </main>
+        <footer class="rui-footer">
+            <div class="rui-grid rui-clearfix">
+                <div class="rui-grid-primary">
+                    <ul class="rui-footer-column">
+                        <li><a href="https://facebook.com/realestateAus" class="rui-icon rui-icon-facebook" title="Like realestate.com.au on Facebook">Facebook</a></li>
+                        <li><a href="https://twitter.com/realestate_au" class="rui-icon rui-icon-twitter" title="Follow realestate.com.au on Twitter">Twitter</a></li>
+                        <li><a href="http://pinterest.com/realestateau" class="rui-icon rui-icon-pinterest" title="Get pinning with realestate.com.au on Pinterest">Pinterest</a></li>
+                        <li><a href="http://www.linkedin.com/company/rea-group" class="rui-icon rui-icon-linkedin" title="Connect with REA Group on LinkedIn">LinkedIn</a></li>
+                        <li><a href="https://youtube.com/thereagroup" class="rui-icon rui-icon-youtube" title="View the REA Group YouTube Channel">YouTube</a></li>
+                    </ul>
+                    <ul class="rui-footer-column">
+                        <li><a href="/doc/about_us/About.htm" title="About Us">About</a></li>
+                        <li><a href="/cgi-bin/rsearch?a=v&amp;t=res&amp;id=65" title="Contact realestate.com.au">Contact Us</a></li>
+                        <li><a href="/contact-us" title="Advertise with realestate.com.au">Advertise With Us</a></li>
+                        <li><a href="/cgi-bin/rsearch?a=v&amp;t=ao-wel&amp;id=767" title="Agent Administration">Agent Admin</a></li>
+                        <li><a href="/contact-us" title="Provide feedback for realestate.com.au">Feedback</a></li>
+                    </ul>
+                    <ul class="rui-footer-column">
+                        <li><a href="http://careers.realestate.com.au/" title="Jobs and Careers with REA Group">Careers</a></li>
+                        <li><a href="http://www.rea-group.com/irm/content/news-pressreleases.html" title="Press Releases">Press Releases</a></li>
+                        <li><a href="/sitemap" title="realestate.com.au Site Map">Site Map</a></li>
+                        <li><a href="/cgi-bin/rsearch?a=v&amp;t=res&amp;id=13" title="Legal">Legal</a></li>
+                        <li class="last"><a href="/cgi-bin/rsearch?a=v&amp;t=res&amp;id=587" title="Privacy Policy">Privacy</a></li>
+                    </ul>
+                    <ul class="rui-footer-column">
+                        <li><a href="/" title="Search for Properties to Buy and Rent">Real Estate Australia</a></li>
+                        <li><a href="http://www.realcommercial.com.au/" target="_blank" title="Search for Commercial Real Estate">Commercial Real Estate</a></li>
+                        <li><a href="http://www.realcommercial.com.au/cgi-bin/rsearch?a=sf&amp;cu=fn-realcom&amp;t=bus&amp;s=aus" target="_blank" title="Search Businesses for Sale">Businesses for Sale</a></li>
+                        <li><a href="/doc/propertypartners/italian_property_partner.htm" target="_blank" title="Italian Property Partner">Italian Property Partner</a></li>
+                        <li class="last"><a href="http://www.homeguru.com.au/" target="_blank" title="Home Guru">Home Guru</a></li>
+                    </ul>
+
+                </div>
+                <div class="rui-grid-secondary">
+                    <a title="REA Group Corporate Website" href="http://www.rea-group.com/">&copy; REA Group</a>
+                    <p>
+            Owned and operated by ASX-listed REA Group (REA:ASX), you can find realestate.com.au on your computer, smartphone (via our award winning app) and tablets.
+                    </p>
+                    <p>
+            We’re the number one place for all things property and the home of Australia’s leading property community.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

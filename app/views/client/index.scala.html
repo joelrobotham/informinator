@@ -1,0 +1,15 @@
+
+@client.layout() {
+    <form class="rui-form" id="form">
+        <fieldset>
+           <label class="rui-form-element"><span>Email:</span> <input name="email" class="rui-input" placeholder="Email"/></label>
+           <label class="rui-form-element"><span>Message:</span> <input name="message" class="rui-input" placeholder="Message"/></label>
+           <label class="rui-form-element"><span>Body:</span> <input name="body" class="rui-input" placeholder="Body"/></label>
+        </fieldset>
+
+        <input type="submit"class="rui-button-brand"/>
+
+    </form>
+
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/formSubmitter.js")"></script>
+}

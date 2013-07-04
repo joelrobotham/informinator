@@ -13,7 +13,7 @@ import model.NotificationDAO
  * To change this template use File | Settings | File Templates.
  */
 object Notifications extends Controller {
-  def create(messageType: String) = Action(parse.json) { 
+  def create(messageType: String) = Action(parse.json) {
     request =>
     val notification = new Notification(Json.stringify(request.body\"email"), Json.stringify(request.body\"message"))
     val id = NotificationDAO.insert(notification)

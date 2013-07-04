@@ -1,9 +1,11 @@
+PUT /notifications/:messageType controllers.Notifications.create(messageType: String)
+
+GET  /assets/*file        controllers.Assets.at(path="/public", file)
+GET /client               controllers.Client.index
+
 GET   /    controllers.HelloWorld.hello
 
 GET /:consumerId        controllers.Consumer.details(consumerId)
 GET /:consumerId/count  controllers.Consumer.count(consumerId)
 GET /:consumerId/recent controllers.Consumer.recent(consumerId)
-
-PUT /notifications/:messageType controllers.Notifications.create(messageType: String)
-
 
