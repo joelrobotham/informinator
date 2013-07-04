@@ -15,7 +15,7 @@ import model.NotificationDAO
 object Notifications extends Controller {
   def create(messageType: String) = Action(parse.json) {
     request =>
-    val notification = new Notification(Json.stringify(request.body\"email"), Json.stringify(request.body\"message"))
+    val notification = new Notification(email=(request.body\"email").asOpt[String], message=(request.body\"message").asOpt[String], msgType=messageType, url=(request.body\"url").asOpt[String], body=(request.body\"body").asOpt[String])
     val id = NotificationDAO.insert(notification)
     Ok("test")
   }
