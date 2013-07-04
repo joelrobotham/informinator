@@ -4,3 +4,6 @@ GET /:consumerId        com.reagroup.notification.Consumer.details(consumerId)
 GET /:consumerId/count  com.reagroup.notification.Consumer.count(consumerId)
 GET /:consumerId/recent com.reagroup.notification.Consumer.recent(consumerId)
 
+PUT /notifications/:messageType com.reagroup.myaccount.Notifications.create(messageType: String)
+
+
