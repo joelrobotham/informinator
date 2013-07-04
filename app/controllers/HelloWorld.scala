@@ -21,5 +21,5 @@ object HelloWorld extends Controller {
   }
   count = coll.count()
   
-  val hello = Action(Ok("Hello world - mongo collection count: " + count))
+  val hello = Action(Ok("Hello world - mongodb collection count: " + count))
 }
