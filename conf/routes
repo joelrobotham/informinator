@@ -1,9 +1,10 @@
 PUT /notifications/:messageType controllers.Notifications.create(messageType: String)
+GET /:email/notifications       controllers.Notifications.index(email: String)
 
-GET  /assets/*file        controllers.Assets.at(path="/public", file)
-GET /client               controllers.Client.index
+GET  /assets/*file              controllers.Assets.at(path="/public", file)
+GET /client                     controllers.Client.index
 
-GET   /    controllers.HelloWorld.hello
+GET /                           controllers.HelloWorld.hello
 
 GET /:consumerId        controllers.Consumer.details(consumerId)
 GET /:consumerId/count  controllers.Consumer.count(consumerId)
