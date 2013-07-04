@@ -11,7 +11,7 @@ object HelloWorld extends Controller {
   val coll = db("test")
   var count = coll.count()
   
-  // Push something into mongo
+  // Push something into mongodb
   if ( count == 0 ) {
 	  val a = MongoDBObject("hello" -> "world")
 	  val b = MongoDBObject("language" -> "scala")
