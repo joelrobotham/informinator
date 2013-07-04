@@ -1,4 +1,4 @@
-package com.reagroup.myaccount
+package controllers
 
 import play.api.mvc.Controller
 import play.api.mvc.Action

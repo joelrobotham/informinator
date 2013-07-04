@@ -1,4 +1,4 @@
-package com.reagroup.myaccount
+package controllers
 
 import play.api.mvc.{Action, Controller}
 import play.api.libs.json.JsError

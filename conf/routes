@@ -1,9 +1,9 @@
-GET   /    com.reagroup.myaccount.HelloWorld.hello
+GET   /    controllers.HelloWorld.hello
 
-GET /:consumerId        com.reagroup.notification.Consumer.details(consumerId)
-GET /:consumerId/count  com.reagroup.notification.Consumer.count(consumerId)
-GET /:consumerId/recent com.reagroup.notification.Consumer.recent(consumerId)
+GET /:consumerId        controllers.Consumer.details(consumerId)
+GET /:consumerId/count  controllers.Consumer.count(consumerId)
+GET /:consumerId/recent controllers.Consumer.recent(consumerId)
 
-PUT /notifications/:messageType com.reagroup.myaccount.Notifications.create(messageType: String)
+PUT /notifications/:messageType controllers.Notifications.create(messageType: String)
 
 
