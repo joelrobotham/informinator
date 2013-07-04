@@ -22,7 +22,7 @@ object Consumer extends Controller {
   def recent(consumerId: String) = Action { request =>
     val json = NotificationDAO.findByEmail(consumerId)
     	.map((notify => Map(
-    			"id" -> notify.message,
+    			"message" -> notify.message,
     			"body" -> notify.body,
     			"url" -> notify.url)));
     
