@@ -17,6 +17,8 @@ object Consumer extends Controller {
   def count(consumerId: String) = Action(Ok(consumerId))
 
   def recent(consumerId: String) = Action { request =>
+    
+
     val results = Seq(
         Json.toJson(
           Map(
@@ -35,6 +37,11 @@ object Consumer extends Controller {
             "message" -> Json.toJson("Listing has been updated"),
             "body" -> Json.toJson("Some opaque structure")))
             )
-    Ok(Json.toJson(results))
+    Ok(Json.toJson(results)).withHeaders(
+      "Access-Control-Allow-Origin" -> "*",
+      "Access-Control-Allow-Methods" -> "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers" -> "Origin, X-Requested-With, Content-Type, Accept, Host, Api-Token"
+    )
+    
   }
 }
