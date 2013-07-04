@@ -19,7 +19,6 @@ case class Notification(_id: ObjectId = new ObjectId,
 
 object NotificationDAO extends SalatDAO[Notification, String](collection = mongoCollection("notification_coll")) {}
 
-}
 
 
 

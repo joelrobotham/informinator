@@ -23,9 +23,10 @@ object Notifications extends Controller {
   }
 
   def index(email: String) = Action {
-    val notifications = Array(new Notification("safdjk", "A message"), new Notification("safdjk", "2 message"))
+    //val notifications = Array(new Notification("safdjk", "A message"), new Notification("safdjk", "2 message"))
     
 	//def findOneByEmail(notificationId: String): Option[Notification] = dao.findOne(MongoDBObject("notificationId" -> notificationId))
-    Ok(html.notifications.index(email, notifications))
+    //Ok(html.notifications.index(email, notifications))
+  Ok("test")
   }
 }
