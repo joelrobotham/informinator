@@ -3,10 +3,8 @@ package controllers
 import play.api.mvc.Controller
 import play.api.mvc.Action
 import play.api.libs.json.Json
-import play.api.libs.json.JsNull
-import org.joda.time.DateTime
 import model.NotificationDAO
-import model.Notification
+import java.text.SimpleDateFormat
 
 object Consumer extends Controller {
   def details(consumerId: String) = Action { request =>
@@ -20,11 +18,12 @@ object Consumer extends Controller {
 		  Ok(NotificationDAO.findByEmail(consumerId).length.toString))
 
   def recent(consumerId: String) = Action { request =>
+    val dateFormat = new SimpleDateFormat("d MMMM yyyy hh:mm")
     val json = NotificationDAO.findByEmail(consumerId)
     	.map((notify => Map(
     			"message" -> notify.message,
     			"body" -> notify.body,
-    			"creation" -> Some(notify.creation),
+    			"creation" -> Some(dateFormat.format(notify.creation)),
     			"url" -> notify.url)));
     
     Ok(Json.toJson(json)).withHeaders(
