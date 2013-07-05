@@ -53,6 +53,7 @@ object Consumer extends Controller {
       "body" -> notify.body,
       "creation" -> Some(dateFormat.format(notify.creation)),
       "acknowledged" -> Some(notify.acknowledged.toString),
-      "url" -> notify.url))
+      "url" -> notify.url,
+      "relativeUrl" -> Some(notify.url.getOrElse("").replaceAll("http://www.realestate.com.au", ""))))
   }
 }
