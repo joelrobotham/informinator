@@ -1,5 +1,5 @@
 function updateData() {
-    $.getJSON("/" + window.user + "/recent", function(data) {
+    $.getJSON("/" + window.user + "/all", function(data) {
         var html = "";
         for(var i in data) {
             html += "<tr><td>" + data[i].creation + "</td>";

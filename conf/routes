@@ -10,4 +10,5 @@ GET /                           controllers.HelloWorld.hello
 GET /:email        controllers.Consumer.details(email)
 GET /:email/count  controllers.Consumer.count(email)
 GET /:email/recent controllers.Consumer.recent(email)
+GET /:email/all controllers.Consumer.all(email)
 

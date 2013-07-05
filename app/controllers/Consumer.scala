@@ -3,7 +3,7 @@ package controllers
 import play.api.mvc.Controller
 import play.api.mvc.Action
 import play.api.libs.json.Json
-import model.NotificationDAO
+import model.{Notification, NotificationDAO}
 import java.text.SimpleDateFormat
 
 object Consumer extends Controller {
@@ -24,20 +24,34 @@ object Consumer extends Controller {
 )
 
   def recent(consumerId: String) = Action { request =>
-    val dateFormat = new SimpleDateFormat("d MMMM yyyy hh:mm")
     val json = NotificationDAO.findByEmail(consumerId)
-    	.map((notify => Map(
-          "id" -> Some(notify._id.toString),
-    			"message" -> notify.message,
-    			"body" -> notify.body,
-    			"creation" -> Some(dateFormat.format(notify.creation)),
-    			"url" -> notify.url)));
+    	.map(jsonMapper());
     
     Ok(Json.toJson(json)).withHeaders(
       "Access-Control-Allow-Origin" -> "*",
       "Access-Control-Allow-Methods" -> "GET, POST, PUT, DELETE, OPTIONS",
       "Access-Control-Allow-Headers" -> "Origin, X-Requested-With, Content-Type, Accept, Host, Api-Token"
     )
-    
+  }
+
+  def all(consumerId: String) = Action { request =>
+    val json = NotificationDAO.findAllByEmail(consumerId)
+      .map(jsonMapper());
+
+    Ok(Json.toJson(json)).withHeaders(
+      "Access-Control-Allow-Origin" -> "*",
+      "Access-Control-Allow-Methods" -> "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers" -> "Origin, X-Requested-With, Content-Type, Accept, Host, Api-Token"
+    )
+  }
+
+  def jsonMapper(): (Notification) => Map[String, Option[String]] = {
+    val dateFormat = new SimpleDateFormat("d MMMM yyyy hh:mm")
+    (notify => Map(
+      "id" -> Some(notify._id.toString),
+      "message" -> notify.message,
+      "body" -> notify.body,
+      "creation" -> Some(dateFormat.format(notify.creation)),
+      "url" -> notify.url))
   }
 }

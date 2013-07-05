@@ -25,6 +25,7 @@ case class Notification(_id: ObjectId = new ObjectId,
 object NotificationDAO extends SalatDAO[Notification, String](collection = mongoCollection("notification_coll")) {
   def findByEmail(email: String) = find(MongoDBObject("email"->email, "acknowledged" -> false)).toList
   def acknowledge(id: String) = update(MongoDBObject("_id"-> new ObjectId(id)), MongoDBObject("acknowledged" -> true))
+  def findAllByEmail(email: String) = find(MongoDBObject("email"->email)).toList
 }
 
 
