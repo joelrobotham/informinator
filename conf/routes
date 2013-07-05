@@ -6,7 +6,7 @@ GET /client                     controllers.Client.index
 
 GET /                           controllers.HelloWorld.hello
 
-GET /:consumerId        controllers.Consumer.details(consumerId)
-GET /:consumerId/count  controllers.Consumer.count(consumerId)
-GET /:consumerId/recent controllers.Consumer.recent(consumerId)
+GET /:email        controllers.Consumer.details(email)
+GET /:email/count  controllers.Consumer.count(email)
+GET /:email/recent controllers.Consumer.recent(email)
 

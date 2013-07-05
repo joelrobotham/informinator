@@ -5,6 +5,8 @@ import play.api.mvc.Action
 import play.api.libs.json.Json
 import play.api.libs.json.JsNull
 import org.joda.time.DateTime
+import model.NotificationDAO
+import model.Notification
 
 object Consumer extends Controller {
   def details(consumerId: String) = Action { request =>
@@ -14,30 +16,17 @@ object Consumer extends Controller {
     Ok(Json.toJson(results))
   }
   
-  def count(consumerId: String) = Action(Ok(consumerId))
+  def count(consumerId: String) = Action(
+		  Ok(NotificationDAO.findByEmail(consumerId).length.toString))
 
   def recent(consumerId: String) = Action { request =>
+    val json = NotificationDAO.findByEmail(consumerId)
+    	.map((notify => Map(
+    			"message" -> notify.message,
+    			"body" -> notify.body,
+    			"url" -> notify.url)));
     
-
-    val results = Seq(
-        Json.toJson(
-          Map(
-            "creation" -> Json.toJson(DateTime.now.toString("YYYYMMdd HH:mmZ")),
-            "expiry" -> Json.toJson(DateTime.now.toString("YYYYMMdd HH:mmZ")),
-            "acknowledged" -> Json.toJson(true),
-            "type" -> Json.toJson("PROPERTY_CHANGED"),
-            "message" -> Json.toJson("Listing has been updated"),
-            "body" -> Json.toJson("Some opaque structure that might differ depending on the message type"))),
-        Json.toJson(
-          Map(
-            "creation" -> Json.toJson(DateTime.now.minusDays(2).toString("YYYYMMdd HH:mmZ")),
-            "expiry" -> Json.toJson(DateTime.now.plusDays(1).toString("YYYYMMdd HH:mmZ")),
-            "acknowledged" -> Json.toJson(false),
-            "type" -> Json.toJson("PROPERTY_CHANGED"),
-            "message" -> Json.toJson("Listing has been updated"),
-            "body" -> Json.toJson("Some opaque structure")))
-            )
-    Ok(Json.toJson(results)).withHeaders(
+    Ok(Json.toJson(json)).withHeaders(
       "Access-Control-Allow-Origin" -> "*",
       "Access-Control-Allow-Methods" -> "GET, POST, PUT, DELETE, OPTIONS",
       "Access-Control-Allow-Headers" -> "Origin, X-Requested-With, Content-Type, Accept, Host, Api-Token"
