@@ -1,0 +1,21 @@
+@(messageType: String,  subscribers: List[String])
+@layout() {
+    <h1>Subscribers for @messageType</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Subscribers</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(subscriber <- subscribers) {
+            <tr>
+                <td>@subscriber</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        window.user = "@messageType";
+    </script>
+}

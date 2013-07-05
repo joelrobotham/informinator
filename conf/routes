@@ -1,8 +1,11 @@
 PUT /notifications/:messageType controllers.Notifications.create(messageType: String)
+PUT /notifications/topic/:messageType controllers.Notifications.createMessageTypeNotifications(messageType: String)
 GET /:email/notifications       controllers.Notifications.index(email: String)
+GET /:messageType/subscribers         controllers.Notifications.msgTypeSubscribers(messageType: String)
 
 GET  /assets/*file              controllers.Assets.at(path="/public", file)
 GET /client                     controllers.Client.index
+GET /client/topic               controllers.Client.topic
 
 GET /                           controllers.HelloWorld.hello
 

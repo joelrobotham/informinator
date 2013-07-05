@@ -15,4 +15,8 @@ object Client extends Controller{
   def index = Action {
      Ok(html.client.index())
   }
+  
+  def topic = Action {
+     Ok(html.client.topic())
+  }
 }

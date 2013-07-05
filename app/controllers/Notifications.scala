@@ -21,9 +21,25 @@ object Notifications extends Controller {
     val id = NotificationDAO.insert(notification)
     Ok("test")
   }
+  
+  def createMessageTypeNotifications(messageType: String) = Action(parse.json) {
+    request =>
+    val subscribers = NotificationDAO.findByDistinctEmailByMsgType(messageType)
+    
+    for( subscriber <- subscribers ){
+    	val notification = new Notification(email=Some(subscriber), message=(request.body\"message").asOpt[String], msgType=messageType, url=(request.body\"url").asOpt[String], body=(request.body\"body").asOpt[String])
+    	val id = NotificationDAO.insert(notification)
+    }   
+    Ok("test")
+  }
 
   def index(email: String) = Action {
     val notifications = NotificationDAO.findByEmail(email)
     Ok(html.notifications.index(email,notifications))
+  }
+  
+  def msgTypeSubscribers(messageType: String) = Action {
+    val subscribers = NotificationDAO.findByDistinctEmailByMsgType(messageType)
+    Ok(html.notifications.subscribers(messageType, subscribers))
   }
 }

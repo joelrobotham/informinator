@@ -1,0 +1,16 @@
+
+@layout() {
+    <form class="rui-form" id="form">
+        <fieldset>
+           <label class="rui-form-element"><span>Message Type:</span> <input name="messageType" class="rui-input" placeholder="Message Type"/></label>
+           <label class="rui-form-element"><span>Message:</span> <input name="message" class="rui-input" placeholder="Message"/></label>
+           <label class="rui-form-element"><span>Url:</span> <input name="url" class="rui-input" placeholder="Url"/></label>
+           <label class="rui-form-element"><span>Body:</span> <textarea name="body" class="rui-input" placeholder="Body"></textarea></label>
+        </fieldset>
+
+        <input type="submit"class="rui-button-brand"/>
+
+    </form>
+
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/topicFormSubmitter.js")"></script>
+}

@@ -18,7 +18,13 @@ case class Notification(_id: ObjectId = new ObjectId,
   msgType: String)
 
 object NotificationDAO extends SalatDAO[Notification, String](collection = mongoCollection("notification_coll")) {
+  
   def findByEmail(email: String) = find(MongoDBObject("email"->email)).toList
+  def findByDistinctMsgType(messageType: String) = collection.distinct("msgType").toList
+  def findByDistinctEmailByMsgType(messageType: String): List[String] = {
+    val anyList = collection.distinct("email", MongoDBObject("msgType" -> messageType)).toList
+    anyList.map(_.asInstanceOf[String])
+  }
 }
 
 
