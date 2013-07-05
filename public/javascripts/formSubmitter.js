@@ -1,8 +1,8 @@
-window.sampleproperties = [{id: "113998259", url:"http://www.realestate.com.au/property-apartment-vic-richmond-113998259"},
-    {id: "114122019", url:"http://www.realestate.com.au/property-house-vic-richmond-114122019"},
-    {id: "114109519", url:"http://www.realestate.com.au/property-townhouse-vic-richmond-114109519"},
-    {id: "114237143", url:"http://www.realestate.com.au/property-townhouse-vic-richmond-114237143"},
-    {id: "114228491", url:"http://www.realestate.com.au/property-house-vic-richmond-114228491"}];
+window.sampleproperties = [{id: "Price updated 113998259", url:"http://www.realestate.com.au/property-apartment-vic-richmond-113998259"},
+    {id: "Auction today 114122019", url:"http://www.realestate.com.au/property-house-vic-richmond-114122019"},
+    {id: "Inpection time change 114109519", url:"http://www.realestate.com.au/property-townhouse-vic-richmond-114109519"},
+    {id: "Drop drop 114237143", url:"http://www.realestate.com.au/property-townhouse-vic-richmond-114237143"},
+    {id: "New images 114228491", url:"http://www.realestate.com.au/property-house-vic-richmond-114228491"}];
 
 window.emails = ["joel@blah.com","foo@bar.com"];
 
@@ -24,7 +24,7 @@ $('#form').submit(function(event) {
             var randomPropNo = Math.floor((Math.random()*5));
             var randomEmailNo = Math.floor((Math.random()*2));
             var prop = window.sampleproperties[randomPropNo];
-            $("input[name='message']").val("New property " + prop.id);
+            $("input[name='message']").val(prop.id);
             $("input[name='url']").val(prop.url);
             $("input[name='email']").val(emails[randomEmailNo]);
         });
