@@ -2,7 +2,7 @@ function updateData() {
     $.getJSON("/" + window.user + "/recent", function(data) {
         var html = "";
         for(var i in data) {
-            html += "<tr><td>A Date</td>";
+            html += "<tr><td>" + data[i].creation + "</td>";
             html += "<td>" + data[i].message + "</td>";
             html += '<td><a href="' + data[i].url + '" target="_blank">View</a></td>';
             html += "</tr>";

@@ -24,6 +24,7 @@ object Consumer extends Controller {
     	.map((notify => Map(
     			"message" -> notify.message,
     			"body" -> notify.body,
+    			"creation" -> Some(notify.creation),
     			"url" -> notify.url)));
     
     Ok(Json.toJson(json)).withHeaders(
