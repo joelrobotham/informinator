@@ -14,8 +14,14 @@ object Consumer extends Controller {
     Ok(Json.toJson(results))
   }
   
-  def count(consumerId: String) = Action(
-		  Ok(NotificationDAO.findByEmail(consumerId).length.toString))
+  def count(consumerId: String) = Action (
+  
+		  Ok(NotificationDAO.findByEmail(consumerId).length.toString).withHeaders(
+      "Access-Control-Allow-Origin" -> "*",
+      "Access-Control-Allow-Methods" -> "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers" -> "Origin, X-Requested-With, Content-Type, Accept, Host, Api-Token"
+    )
+)
 
   def recent(consumerId: String) = Action { request =>
     val dateFormat = new SimpleDateFormat("d MMMM yyyy hh:mm")
