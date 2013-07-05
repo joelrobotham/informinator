@@ -1,8 +1,13 @@
 function updateData() {
     $.getJSON("/" + window.user + "/all", function(data) {
         var html = "";
+        var unread = 0;
         for(var i in data) {
-            var rowStyle  = data[i].acknowledged === "false" ? "font-weight: bold;" : "";
+            var rowStyle = "";
+            if (data[i].acknowledged === "false") {
+                var rowStyle = "font-weight: bold;";
+                unread += 1;
+            }
             html += '<tr style="' + rowStyle + '"><td>' + data[i].creation + '</td>';
             html += "<td>" + data[i].message + "</td>";
             html += '<td><a data-id="' + data[i].id + '" href="' + data[i].url + '" target="_blank">View</a></td>';
@@ -10,7 +15,7 @@ function updateData() {
         }
         $('tbody').html(html);
 
-        $('title').html("(" + data.length + ") Notifications for " + window.user);
+        $('title').html("(" + unread + ") Notifications for " + window.user);
 
         if(window.previousData && data.length > window.previousData.length) {
             alert("You have new notifications");
