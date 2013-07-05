@@ -21,6 +21,7 @@ object Consumer extends Controller {
     val dateFormat = new SimpleDateFormat("d MMMM yyyy hh:mm")
     val json = NotificationDAO.findByEmail(consumerId)
     	.map((notify => Map(
+          "id" -> Some(notify._id.toString),
     			"message" -> notify.message,
     			"body" -> notify.body,
     			"creation" -> Some(dateFormat.format(notify.creation)),
