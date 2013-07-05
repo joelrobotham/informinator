@@ -1,8 +1,9 @@
-window.sampleproperties = [{id: "Price updated 113998259", url:"http://www.realestate.com.au/property-apartment-vic-richmond-113998259"},
-    {id: "Auction today 114122019", url:"http://www.realestate.com.au/property-house-vic-richmond-114122019"},
-    {id: "Inpection time change 114109519", url:"http://www.realestate.com.au/property-townhouse-vic-richmond-114109519"},
-    {id: "Drop drop 114237143", url:"http://www.realestate.com.au/property-townhouse-vic-richmond-114237143"},
-    {id: "New images 114228491", url:"http://www.realestate.com.au/property-house-vic-richmond-114228491"}];
+window.sampleproperties = [{id: "Price updated for 1 Smith Street, Richmond", url:"http://www.realestate.com.au/property-apartment-vic-richmond-113998259"},
+    {id: "Auction today for 2 Victoria Street, Richmond", url:"http://www.realestate.com.au/property-house-vic-richmond-114122019"},
+    {id: "Inspection time changed for 34 River Street, Richmond", url:"http://www.realestate.com.au/property-townhouse-vic-richmond-114109519"},
+    {id: "Vendor in distress at 35 Bridge Road, Richmond", url:"http://www.realestate.com.au/property-townhouse-vic-richmond-114237143"},
+    {id: "House party tonight!!! at 87 Beach Street, Mornington", url:"http://www.realestate.com.au/project-morven+manor-vic-mornington-600002163"},
+    {id: "Updated photos for Bob Street, Richmond", url:"http://www.realestate.com.au/property-house-vic-richmond-114228491"}];
 
 window.emails = ["joel@blah.com","foo@bar.com"];
 

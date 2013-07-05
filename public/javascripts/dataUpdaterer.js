@@ -18,7 +18,8 @@ function updateData() {
         $('title').html("(" + unread + ") Notifications for " + window.user);
 
         if(window.previousData && data.length > window.previousData.length) {
-            sendNotification("You have new messages from realestate.com.au");
+            var newMessage = data[0].message;
+            sendNotification("You have new messages from realestate.com.au", newMessage);
         }
 
         $('a').click(function(event){
@@ -30,13 +31,13 @@ function updateData() {
 
 window.setInterval(updateData,1000);
 
-function sendNotification(message) {
+function sendNotification(message, newMessage) {
     console.log("sending notification");
     if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
         console.log('permission granted');
         // function defined in step 2
         window.webkitNotifications.createNotification(
-            'http://s2.rea.reastatic.net/rs/img/favicon.ico$$164.5489-12', message, "A property has changed").show();
+            'http://s2.rea.reastatic.net/rs/img/favicon.ico$$164.5489-12', message, newMessage).show();
     };
 };
 
