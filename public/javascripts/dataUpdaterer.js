@@ -10,6 +10,11 @@ function updateData() {
         $('tbody').html(html);
 
         $('title').html("(" + data.length + ") Notifications for " + window.user);
+
+        if(window.previousData && data.length > window.previousData.length) {
+            alert("You have new notifications");
+        }
+        window.previousData = data;
     });
 }
 
