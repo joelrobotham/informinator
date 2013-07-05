@@ -1,9 +1,3 @@
-
-    <script type="text/javascript">
-        window.user = "@user";
-    </script>
-
-    <script type="text/javascript" src="@routes.Assets.at("javascripts/dataUpdaterer.js")"></script>
 @(user: String, notifications: List[model.Notification])
 @layout() {
     <h1>Notifications for @user</h1>
@@ -12,6 +6,7 @@
             <tr>
                 <th>Received</th>
                 <th>Message</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -20,10 +15,15 @@
             <tr>
                 <td>mapping@notification.creation</td>
                 <td>@notification.message</td>
-                
+                <td><a target="_blank" href="@notification.url">View</a></td>
             </tr>
             }
         </tbody>
     </table>
-    
-    }
+
+    <script type="text/javascript">
+        window.user = "@user";
+    </script>
+
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/dataUpdaterer.js")"></script>
+}
