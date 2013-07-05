@@ -35,11 +35,21 @@ object Notifications extends Controller {
 
   def index(email: String) = Action {
     val notifications = NotificationDAO.findByEmail(email)
+
     Ok(html.notifications.index(email,notifications))
   }
   
   def msgTypeSubscribers(messageType: String) = Action {
     val subscribers = NotificationDAO.findByDistinctEmailByMsgType(messageType)
     Ok(html.notifications.subscribers(messageType, subscribers))
+  }
+
+  def acknowledge(id: String) = Action { request =>
+    NotificationDAO.acknowledge(id)
+    Ok("Message acknowledged").withHeaders(
+      "Access-Control-Allow-Origin" -> "*",
+      "Access-Control-Allow-Methods" -> "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers" -> "Origin, X-Requested-With, Content-Type, Accept, Host, Api-Token"
+    )
   }
 }

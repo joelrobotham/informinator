@@ -1,9 +1,10 @@
 table {
-    width:90%;
+    width:100%;
     border-top:1px solid #e5eff8;
     border-right:1px solid #e5eff8;
     margin:1em auto;
     border-collapse:collapse;
+    border-top:solid 1px #343434;
 }
 tr.odd td	{
     background:#f7fbff
@@ -18,19 +19,32 @@ td {
     border-bottom:1px solid #e5eff8;
     border-left:1px solid #e5eff8;
     padding:.3em 1em;
-    text-align:center;
+    text-align:left;
+    background-color: #f1f1f1;
+}
+table tr:nth-child(odd) td{
+    background-color: #fff;
 }
 th {
     font-weight:normal;
     text-align:left;
-    border-bottom: 1px solid #e5eff8;
-    border-left:1px solid #e5eff8;
+    border-bottom: 1px solid #343434;
+    border-left:1px solid #343434;
+
     padding:.3em 1em;
+
 }
 thead th {
     background:#aaa;
-    text-align:center;
+    text-align:left;
     font:bold 1.2em/2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+td:last-child,
+thead th:last-child{
+    text-align: center;
+}
+thead th:last-child{
+    border-right:solid 1px #343434;
 }
 tfoot th {
     text-align:center;

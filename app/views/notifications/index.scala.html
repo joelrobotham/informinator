@@ -6,17 +6,13 @@
             <tr>
                 <th>Received</th>
                 <th>Message</th>
+                <th>View</th>
             </tr>
         </thead>
         <tbody>
-            @for(notification <- notifications) {
-            <tr>
-                <td>10/10/2011 10:15am</td>
-                <td>@notification.message</td>
-            </tr>
-            }
         </tbody>
     </table>
+
     <script type="text/javascript">
         window.user = "@user";
     </script>

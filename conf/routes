@@ -2,6 +2,7 @@ PUT /notifications/:messageType controllers.Notifications.create(messageType: St
 PUT /notifications/topic/:messageType controllers.Notifications.createMessageTypeNotifications(messageType: String)
 GET /:email/notifications       controllers.Notifications.index(email: String)
 GET /:messageType/subscribers         controllers.Notifications.msgTypeSubscribers(messageType: String)
+POST /notifications/:id/acknowledge controllers.Notifications.acknowledge(id: String)
 
 GET  /assets/*file              controllers.Assets.at(path="/public", file)
 GET /client                     controllers.Client.index
@@ -12,4 +13,5 @@ GET /                           controllers.HelloWorld.hello
 GET /:email        controllers.Consumer.details(email)
 GET /:email/count  controllers.Consumer.count(email)
 GET /:email/recent controllers.Consumer.recent(email)
+GET /:email/all controllers.Consumer.all(email)
 
