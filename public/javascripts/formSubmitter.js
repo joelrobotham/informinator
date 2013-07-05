@@ -12,10 +12,6 @@ $('#form').submit(function(event) {
             contentType: "application/json",
             data: JSON.stringify(formSubmitData)})
         .done(function() {
-            form.reset();
             $("h2").html("Notification Send")
-        })
-        .fail(function() {
-            form.reset();
         });
 });
