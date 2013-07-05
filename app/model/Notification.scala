@@ -23,7 +23,7 @@ case class Notification(_id: ObjectId = new ObjectId,
   msgType: String)
 
 object NotificationDAO extends SalatDAO[Notification, String](collection = mongoCollection("notification_coll")) {
-  def findByEmail(email: String) = find(MongoDBObject("email"->email)).toList
+  def findByEmail(email: String) = find(MongoDBObject("email"->email, "acknowledged" -> false)).toList
 }
 
 
