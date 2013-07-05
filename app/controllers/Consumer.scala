@@ -52,6 +52,7 @@ object Consumer extends Controller {
       "message" -> notify.message,
       "body" -> notify.body,
       "creation" -> Some(dateFormat.format(notify.creation)),
+      "acknowledged" -> Some(notify.acknowledged.toString),
       "url" -> notify.url))
   }
 }
