@@ -1,5 +1,6 @@
 PUT /notifications/:messageType controllers.Notifications.create(messageType: String)
 GET /:email/notifications       controllers.Notifications.index(email: String)
+POST /notifications/:id/acknowledge controllers.Notifications.acknowledge(id: String)
 
 GET  /assets/*file              controllers.Assets.at(path="/public", file)
 GET /client                     controllers.Client.index

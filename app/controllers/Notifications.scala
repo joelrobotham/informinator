@@ -27,4 +27,9 @@ object Notifications extends Controller {
 
     Ok(html.notifications.index(email,notifications))
   }
+
+  def acknowledge(id: String) = Action { request =>
+    NotificationDAO.acknowledge(id)
+    Ok("Message acknowledged")
+  }
 }
