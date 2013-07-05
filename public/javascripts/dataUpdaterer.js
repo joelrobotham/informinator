@@ -17,9 +17,9 @@ function updateData() {
 
         $('title').html("(" + unread + ") Notifications for " + window.user);
 
-        if(window.previousData && data.length > window.previousData.length) {
-            alert("You have new notifications");
-        }
+//        if(window.previousData && data.length > window.previousData.length) {
+//            alert("You have new notifications");
+//        }
 
         $('a').click(function(event){
             $.ajax({url: "/notifications/" + $(this).data().id + "/acknowledge", type: "POST"});
